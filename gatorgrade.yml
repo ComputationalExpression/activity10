@@ -1,0 +1,56 @@
+# Ten checks. Two run the instructor's tests on your Tune class, one reads your Copilot comments,
+# one runs your own tests, and five break one method of your Tune on purpose and run your tests
+# again, to see whether they notice.
+
+- description: "[TUNE] add keeps a note from NOTES and its beats and returns True, returns False for any other note, and length is the total of the beats"
+  check: ExecuteCommand
+  options:
+    command: uv run pytest tests/test_tune.py::test_add_and_length
+
+- description: "[TUNE] frequencies lists each note's pitch in order, highest finds the highest note or none, and describe returns the title, notes and beats"
+  check: ExecuteCommand
+  options:
+    command: uv run pytest tests/test_tune.py::test_frequencies tests/test_tune.py::test_highest tests/test_tune.py::test_describe
+
+- description: "[COPILOT] Each method in tune.py, and each test you wrote, has # Copilot: accepted, edited or rejected on the line above its def"
+  check: ExecuteCommand
+  options:
+    command: uv run pytest tests/test_your_tests.py::test_copilot_decisions
+
+- description: "[TESTS] tests/test_my_tune.py has a test with an assert for each method, and they all pass on your Tune"
+  check: ExecuteCommand
+  options:
+    command: uv run pytest tests/test_your_tests.py::test_my_tests_pass
+
+- description: "[TESTS] Your tests fail when add is broken on purpose"
+  check: ExecuteCommand
+  options:
+    command: uv run pytest "tests/test_your_tests.py::test_my_tests_notice[add]"
+
+- description: "[TESTS] Your tests fail when length is broken on purpose"
+  check: ExecuteCommand
+  options:
+    command: uv run pytest "tests/test_your_tests.py::test_my_tests_notice[length]"
+
+- description: "[TESTS] Your tests fail when frequencies is broken on purpose"
+  check: ExecuteCommand
+  options:
+    command: uv run pytest "tests/test_your_tests.py::test_my_tests_notice[frequencies]"
+
+- description: "[TESTS] Your tests fail when highest is broken on purpose"
+  check: ExecuteCommand
+  options:
+    command: uv run pytest "tests/test_your_tests.py::test_my_tests_notice[highest]"
+
+- description: "[TESTS] Your tests fail when describe is broken on purpose"
+  check: ExecuteCommand
+  options:
+    command: uv run pytest "tests/test_your_tests.py::test_my_tests_notice[describe]"
+
+- src/tune.py:
+  - description: "[CODE] No TODO markers remain in tune.py: delete each TODO comment once its code is written, including Author"
+    check: MatchFileFragment
+    options:
+      fragment: TODO
+      count: 0
+      exact: true
