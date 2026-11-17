@@ -34,8 +34,9 @@ Specifically, by the end of this activity you should be able to:
 
 ## Turn on code completion
 
-This repository turns on Copilot's code completion and leaves Copilot Chat's agent off. To sign
-in, click the Copilot icon in the bar along the bottom of VS Code and sign in with your GitHub
+This repository turns on Copilot's code completion and leaves Copilot Chat's agent off. First open the
+Extensions view, search for `Copilot`, and install **GitHub Copilot Chat** if it is not installed yet. It
+includes code completion. To sign in, click the Copilot icon in the bar along the bottom of VS Code and sign in with your GitHub
 account. If you do not see the icon, open **Settings**, search for `Disable AI Features`, and
 uncheck it.
 
