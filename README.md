@@ -28,7 +28,7 @@ artifact.
 
 Specifically, by the end of this activity you should be able to:
 
-* accept a code suggestion one word or one line at a time, and edit or reject it
+* accept a code suggestion with `Tab`, and edit or reject it
 * write a test with `assert` and run it with `pytest`
 * explain why a test needs to fail when the code it checks is wrong
 
@@ -42,16 +42,18 @@ uncheck it.
 
 |What you want |Mac |Windows |
 |:-------------|:---|:-------|
-|Accept the next word of a suggestion |`Cmd` + `Right Arrow` |`Ctrl` + `Right Arrow` |
-|Accept a one-line suggestion |`Tab` |`Tab` |
-|See a different suggestion |`Option` + `]` |`Alt` + `]` |
+|Accept a suggestion |`Tab` |`Tab` |
 |Reject a suggestion |`Esc`, or keep typing |`Esc`, or keep typing |
+|Extra: accept the next word |`Cmd` + `Right Arrow` |`Ctrl` + `Right Arrow` |
+|Extra: see a different suggestion |`Option` + `]` |`Alt` + `]` |
+
+Keyboard shortcuts can differ from one machine to another. Rely on `Tab` and `Esc`; the extras
+may not work on every computer.
 
 ## The rules
 
-1. Accept a suggestion one word or one line at a time. When Copilot suggests several lines at
-   once, accept them word by word and stop at the end of the first line, then read that line
-   before you take the next.
+1. Read a suggestion before you press `Tab`. When Copilot suggests several lines at once, press
+   `Esc` and keep typing, so each suggestion is short enough to check.
 2. Keep only what you can explain. If a suggestion uses something we have not covered, such as
    `sum`, `max` or `sorted`, reject it and write the loop yourself.
 3. Record your decision by replacing the `TODO` line above each `def` with one of these:
