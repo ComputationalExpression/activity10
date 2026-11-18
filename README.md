@@ -86,7 +86,7 @@ Pitches: [330, 294, 262, 330, 294, 262]
 Highest: E
 ```
 
-## Part 2: Your tests (Friday)
+## Part 2: Your tests
 
 Open `tests/test_my_tune.py`. The first test is written for you as an example. Write the other
 five, one for each method, with the same rules for Copilot. Run your tests with:
