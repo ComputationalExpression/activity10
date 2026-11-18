@@ -61,7 +61,7 @@ may not work on every computer.
    * `# Copilot: edited` when you kept some and changed or wrote the rest
    * `# Copilot: rejected` when you wrote the method yourself
 
-## Part 1: The Tune class (Wednesday)
+## Part 1: The Tune class
 
 Open `src/tune.py`. `NOTES` maps each note to its pitch, and the `Tune` class has six methods for
 you to write. For each one, write the docstring first, since Copilot reads it to decide what to
