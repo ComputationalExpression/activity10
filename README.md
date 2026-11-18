@@ -65,16 +65,17 @@ may not work on every computer.
 
 Open `src/tune.py`. `NOTES` maps each note to its pitch, and the `Tune` class has six methods for
 you to write. For each one, write the docstring first, since Copilot reads it to decide what to
-suggest, and then the body:
+suggest, and then the body. The examples are also where the expected values for your tests in
+Part 2 come from:
 
-|Method |What it does |
-|:------|:------------|
-|`__init__(title)` |Remembers the title, and starts `self.notes` and `self.beats` as empty lists |
-|`add(note, beats)` |Appends a note from `NOTES` and its beats and returns `True`, or returns `False` for any other note |
-|`length()` |Returns the total number of beats |
-|`frequencies()` |Returns a list of the pitch of each note, in order |
-|`highest()` |Returns the note with the highest pitch, or `"none"` when there are no notes |
-|`describe()` |Returns a line such as `Hot Cross Buns: 6 notes, 8 beats` |
+|Method |What it does |Example |
+|:------|:------------|:-------|
+|`__init__(title)` |Remembers the title, and starts `self.notes` and `self.beats` as empty lists |`Tune("Lullaby")` has title `"Lullaby"`, notes `[]` and beats `[]` |
+|`add(note, beats)` |Appends a note from `NOTES` and its beats and returns `True`, or returns `False` for any other note |`add("F", 2)` returns `True`, and then notes is `["F"]` and beats is `[2]`; `add("H", 1)` returns `False` |
+|`length()` |Returns the total number of beats |After `add("D", 2)` and `add("A", 1)`, returns `3` |
+|`frequencies()` |Returns a list of the pitch of each note, in order |After `add("G", 1)` and `add("E", 2)`, returns `[392, 330]` |
+|`highest()` |Returns the note with the highest pitch, or `"none"` when there are no notes |With notes D, A and C, returns `"A"`; with no notes, returns `"none"` |
+|`describe()` |Returns a line such as `Hot Cross Buns: 6 notes, 8 beats` |For `Tune("Waltz")` after `add("F", 2)` and `add("C", 3)`, returns `"Waltz: 2 notes, 5 beats"` |
 
 `src/main.py` is provided. Run it to see your class at work:
 
